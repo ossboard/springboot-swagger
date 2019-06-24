@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: restapi-1.0
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+server:
+  port: 8080
+  servlet:
+    application-display-name: restapi
+    session:
+      timeout: 3600m
+  error:
+    whitelabel:
+      enabled: true
+
+
+demo:
+  inputPath: '/opt/data/inputPath'
+  progressPath: '/opt/data/progressPath'
+  resultPath: '/opt/data/resultPath'
