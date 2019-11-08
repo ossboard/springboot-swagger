@@ -20,7 +20,7 @@ import java.util.TimeZone;
 @Component
 public class InitalizingCore {
 
-    private static Logger log = LoggerFactory.getLogger(InitalizingCore.class);
+    private static Logger logger = LoggerFactory.getLogger(InitalizingCore.class);
 
     @Value("${demo.inputPath}")
     private String inputPath;
@@ -65,7 +65,7 @@ public class InitalizingCore {
 
         } catch (Exception e) {
             stats(jobId, "FAIL", 0, "jobID 가 없습니다.");
-            log.error(e.getMessage(), e);
+            logger.error(e.getMessage(), e);
         }
     }
 
@@ -104,7 +104,7 @@ public class InitalizingCore {
 
         FileUtils.writeStringToFile(targetFile, json, "UTF-8");
         System.out.println(json);
-        log.debug(json);
+        logger.debug(json);
     }
 
     public void result() throws Exception {
@@ -119,7 +119,7 @@ public class InitalizingCore {
                 "]";
         FileUtils.writeStringToFile(targetFile, json, "UTF-8");
         System.out.println(json);
-        log.debug(json);
+        logger.debug(json);
 
     }
 }

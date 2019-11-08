@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Component
 public class RestRequestInterceptor extends HandlerInterceptorAdapter {
-    private static Logger log = LoggerFactory.getLogger(RestRequestInterceptor.class);
+    private static Logger logger = LoggerFactory.getLogger(RestRequestInterceptor.class);
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
@@ -21,7 +21,7 @@ public class RestRequestInterceptor extends HandlerInterceptorAdapter {
         if (queryString != null) {
             fullUrl += "?" + queryString;
         }
-        log.debug(request.getRemoteAddr() + " " + request.getMethod() + " " + fullUrl);
+        logger.info(request.getRemoteAddr() + " " + request.getMethod() + " " + fullUrl);
         return true;
     }
 

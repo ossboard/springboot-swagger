@@ -16,6 +16,9 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'war'
 apply plugin: 'org.ajoberstar.grgit'
 
+group 'com.konantech.spring'
+version '1.0-SNAPSHOT'
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 

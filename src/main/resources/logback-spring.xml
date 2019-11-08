@@ -3,8 +3,8 @@
     <include resource="org/springframework/boot/logging/logback/defaults.xml" />
     <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
 
-    <property name="LogHome" value="${user.home}/.konantech/demo/logs" />
     <property name="LogFile" value="demo" />
+    <property name="LogHome" value="${user.home}/.konantech/${LogFile}/logs" />
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LogHome}/${LogFile}.log</file>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
