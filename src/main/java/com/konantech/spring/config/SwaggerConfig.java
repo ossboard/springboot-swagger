@@ -15,9 +15,10 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 
 import static com.google.common.collect.Lists.newArrayList;
 
@@ -56,13 +57,13 @@ public class SwaggerConfig {
         try {
             prop.load(is);
         } catch (Exception ignore) {}
-        String scm = String.format("%s/%s, %s", prop.getProperty("Git-Branch"), prop.getProperty("Git-Commit"), prop.getProperty("Build-Time"));
+        String scm = String.format("Git-Branch : %s ,Git-Commit : %s, Build-Time : %s", prop.getProperty("Git-Branch"), prop.getProperty("Git-Commit"), prop.getProperty("Build-Time"));
         List<VendorExtension> vendorExtensions = new ArrayList<>();
         vendorExtensions.add(new StringVendorExtension("SCM", scm));
         return new ApiInfo(
                 "REST API",
                 "API 정보",
-                "1.0",
+                "1.1",
                 "#",
                 new Contact(scm, "http://www.konantech.com", ""),
                 "license : 코난테크놀로지", "http://www.konantech.com", vendorExtensions);

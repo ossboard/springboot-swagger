@@ -1,13 +1,11 @@
 buildscript {
-    ext {
-        springBootVersion = '2.1.5.RELEASE'
-    }
+
     repositories {
         jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.+")
         classpath 'org.ajoberstar:gradle-git:1.4.2'
     }
 }
@@ -39,15 +37,15 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
 
     // LOMBOK
-    compile("org.projectlombok:lombok:1.16.20")
-    annotationProcessor("org.projectlombok:lombok:1.16.20")
-    compileOnly("org.projectlombok:lombok:1.16.20")
-    testAnnotationProcessor("org.projectlombok:lombok:1.16.20")
-    testCompileOnly("org.projectlombok:lombok:1.16.20")
+    compile("org.projectlombok:lombok:1.+")
+    annotationProcessor("org.projectlombok:lombok:1.+")
+    compileOnly("org.projectlombok:lombok:1.+")
+    testAnnotationProcessor("org.projectlombok:lombok:1.+")
+    testCompileOnly("org.projectlombok:lombok:1.+")
 
     // SWAGGER2
-    compile("io.springfox:springfox-swagger2:2.9.2")
-    compile("io.springfox:springfox-swagger-ui:2.9.2")
+    compile("io.springfox:springfox-swagger2:2.+")
+    compile("io.springfox:springfox-swagger-ui:2.+")
 
     // WEBJARS
     compile("org.webjars:jquery:1.12.4")
@@ -58,10 +56,10 @@ dependencies {
     compile("org.apache.tomcat.embed:tomcat-embed-jasper")
 
     // COMMON
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
-    compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.2'
-    compile group: 'commons-collections', name: 'commons-collections', version: '3.2.2'
-    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile("org.apache.commons:commons-lang3:3.+")
+    compile("org.apache.commons:commons-collections4:4.+")
+    compile("commons-collections:commons-collections:3.+")
+    compile("commons-io:commons-io:2.+")
 
 
     providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
@@ -71,17 +69,15 @@ dependencies {
 
 // MANIFEST-INFO.MF
 import org.ajoberstar.grgit.*
-def repo = Grgit.open('.')
+def repo = Grgit.open()
 bootWar {
     enabled = true
-    baseName = 'restapi'
-    version = '1.0'
     manifest {
         attributes("Main-Class": "org.springframework.boot.loader.WarLauncher")
         attributes("Built-By": System.getProperty("user.name"))
         attributes(["Specification-Title"     : project.name,
-                    "Specification-Version"   : version,
-                    "Build-Time": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                    "Specification-Version"   : 1.1,
+                    "Build-Time": new Date().format("yyyy-MM-dd HH:mm:ss"),
                     "Git-Commit"              : repo.head().getAbbreviatedId(8),
                     "Git-Branch"              : repo.branch.getCurrent().getName()], "common")
     }

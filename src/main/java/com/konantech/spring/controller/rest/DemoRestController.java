@@ -25,7 +25,7 @@ public class DemoRestController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "port", value = "PORT", required = true, dataType = "String", paramType = "path", defaultValue = "2019")
     })
-    @RequestMapping(value = "/v2/{port}/job", method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/{port}/job", method = RequestMethod.POST)
     public Object jobRequest(@PathVariable int port, HttpServletRequest request) throws Exception {
         RestResponse response = new RestResponse();
         Map resultMap = JSONUtil.objectToMap(response);
@@ -36,7 +36,7 @@ public class DemoRestController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "port", value = "PORT", required = true, dataType = "String", paramType = "path", defaultValue = "2019")
     })
-    @RequestMapping(value = "/v2/{port}/status", method = RequestMethod.GET)
+    @RequestMapping(value = "/v1/{port}/status", method = RequestMethod.GET)
     public Object serverStatus(@PathVariable int port, HttpServletRequest request) throws Exception {
         RestResponse response = new RestResponse();
         Map resultMap = JSONUtil.objectToMap(response);

@@ -16,7 +16,7 @@ public class RestException extends Exception implements Serializable {
     @JsonProperty("timestamp")
     private long timestamp = System.currentTimeMillis();
 
-    @JsonProperty("data")
+    @JsonProperty("message")
     private Object message = this.getDetailMessage();
 
     @JsonProperty("path")
@@ -34,6 +34,7 @@ public class RestException extends Exception implements Serializable {
 
     public RestException(Exception e) {
         super(e);
+        this.message = e.getMessage();
     }
 
     public RestException(int code) {
@@ -50,7 +51,7 @@ public class RestException extends Exception implements Serializable {
         return code;
     }
 
-    @JsonProperty("data")
+    @JsonProperty("message")
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     public String getDetailMessage() {
         return super.getMessage();

@@ -1,4 +1,4 @@
-package com.konantech.spring.controller.rest;
+package com.konantech.spring.controller.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
