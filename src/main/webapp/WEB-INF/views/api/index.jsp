@@ -4,9 +4,9 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>DEMO</title>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/webjars/swagger-ui/3.18.2/swagger-ui.css"/>" />
-    <link rel="stylesheet" type="text/css" href="<c:url value="/webjars/swagger-ui-themes/3.0.0/themes/3.x/theme-material.css"/>" />
+    <title>코난테크놀로</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/webjars/swagger-ui/3.24.0/swagger-ui.css"/>" />
+    <link rel="stylesheet" type="text/css" href="<c:url value="/webjars/swagger-ui-themes/3.0.0/themes/3.x/theme-flattop.css"/>" />
     <style>
         html
         {
@@ -34,8 +34,8 @@
 <body>
 <div id="swagger-ui"></div>
 
-<script src='<c:url value="/webjars/swagger-ui/3.18.2/swagger-ui-bundle.js"/>' type='text/javascript'></script>
-<script src='<c:url value="/webjars/swagger-ui/3.18.2/swagger-ui-standalone-preset.js"/>' type='text/javascript'></script>
+<script src='<c:url value="/webjars/swagger-ui/3.24.0/swagger-ui-bundle.js"/>' type='text/javascript'></script>
+<script src='<c:url value="/webjars/swagger-ui/3.24.0/swagger-ui-standalone-preset.js"/>' type='text/javascript'></script>
 <script>
 
 

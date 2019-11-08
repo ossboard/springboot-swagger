@@ -49,7 +49,7 @@ dependencies {
 
     // WEBJARS
     compile("org.webjars:jquery:1.12.4")
-    compile("org.webjars:swagger-ui:3.18.2")
+    compile("org.webjars:swagger-ui:3.24.0")
     compile("org.webjars.bower:swagger-ui-themes:3.0.0")
 
     compile('javax.servlet:jstl')
