@@ -57,7 +57,7 @@ public class SwaggerConfig {
         try {
             prop.load(is);
         } catch (Exception ignore) {}
-        String scm = String.format("Git-Branch : %s ,Git-Commit : %s, Build-Time : %s", prop.getProperty("Git-Branch"), prop.getProperty("Git-Commit"), prop.getProperty("Build-Time"));
+        String scm = String.format("Build-Time : %s", prop.getProperty("Build-Time"));
         List<VendorExtension> vendorExtensions = new ArrayList<>();
         vendorExtensions.add(new StringVendorExtension("SCM", scm));
         return new ApiInfo(
